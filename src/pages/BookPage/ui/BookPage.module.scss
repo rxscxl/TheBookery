@@ -1,0 +1,28 @@
+.bookWrapper {
+	padding-top: 20px;
+	display: flex;
+	flex: 1 1 auto;
+	gap: 20px;
+	font-style: italic;
+	font-size: 24px;
+
+	.bookImage {
+		height: 320px;
+	}
+
+	.bookContent {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+
+		h1 {
+			font-size: 40px;
+		}
+
+		a {
+			color: #82440b;
+			font-size: 18px;
+			font-weight: 600;
+		}
+	}
+}

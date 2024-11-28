@@ -3,3 +3,42 @@
 	flex-wrap: wrap;
 	gap: 20px;
 }
+
+.pagination {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	margin-top: 116px;
+	margin-bottom: 12px;
+}
+
+.paginationButton {
+	font-family: 'Josefin Sans', sans-serif;
+	font-style: italic;
+	background-color: #d9d9d9;
+	color: #82440b;
+	padding: 8px 12px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 24px;
+}
+
+.paginationButton:disabled {
+	background-color: #cccccc;
+	cursor: not-allowed;
+}
+
+.active {
+	background-color: #b99274;
+	font-weight: bold;
+}
+
+.paginationEllipsis {
+	background: none;
+	color: #888;
+	border: none;
+	cursor: default;
+	font-size: 24px;
+}

@@ -1,6 +1,7 @@
 Header {
 	background-color: #82440b;
 	.headerWrapper {
+		box-sizing: border-box;
 		color: #fff;
 		padding: 5.5px 15px;
 		display: flex;
@@ -22,17 +23,6 @@ Header {
 			}
 		}
 
-		.headerButton {
-			font-size: 30px;
-			font-family: Josefin Sans, sans-serif;
-			font-style: italic;
-			font-weight: 200;
-			transition: 0.2s;
-
-			&:hover {
-				color: rgba($color: #fff, $alpha: 0.8);
-			}
-		}
 		.headerSearch {
 			position: relative;
 

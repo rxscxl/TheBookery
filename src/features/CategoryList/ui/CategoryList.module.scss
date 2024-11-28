@@ -1,0 +1,43 @@
+.categoryList {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+
+	h3 {
+		font-size: 24px;
+		font-weight: 600;
+		color: #82440b;
+		margin-bottom: 12px;
+	}
+	ul {
+		display: flex;
+		gap: 12px;
+		flex-direction: column;
+		flex-wrap: wrap;
+		gap: 10px;
+
+		li {
+			list-style-type: none;
+
+			.genreButton {
+				color: #000;
+				background-color: inherit;
+				border: none;
+				font-size: 24px;
+				font-style: italic;
+				font-family: Josefin Sans, sans-serif;
+				cursor: pointer;
+				transition: 0.2s;
+
+				&:hover {
+					color: rgba($color: #000000, $alpha: 0.8);
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+.active {
+	color: rgba($color: #82440b, $alpha: 1) !important;
+	text-decoration: underline;
+}
