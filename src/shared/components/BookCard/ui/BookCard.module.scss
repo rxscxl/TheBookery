@@ -1,0 +1,23 @@
+.bookCard {
+	background-color: #e7e9e9;
+	width: 400px;
+	display: flex;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+	box-sizing: border-box;
+	padding: 26px 34px;
+	gap: 20px;
+
+	.bookCardInfo {
+		display: flex;
+		flex-direction: column;
+		font-style: italic;
+		gap: 10px;
+		h3 {
+			font-size: 24px;
+		}
+		p {
+			font-size: 16px;
+		}
+	}
+}

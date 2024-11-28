@@ -1,0 +1,63 @@
+Header {
+	background-color: #82440b;
+	.headerWrapper {
+		color: #fff;
+		padding: 5.5px 15px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+
+		.headerLogo {
+			display: flex;
+			align-items: center;
+			gap: 2px;
+
+			.Logo {
+				height: 76px;
+			}
+			span {
+				font-family: 'Playfair Display', serif;
+				font-size: 32px;
+				padding-bottom: 8px;
+			}
+		}
+
+		.headerButton {
+			font-size: 30px;
+			font-family: Josefin Sans, sans-serif;
+			font-style: italic;
+			font-weight: 200;
+			transition: 0.2s;
+
+			&:hover {
+				color: rgba($color: #fff, $alpha: 0.8);
+			}
+		}
+		.headerSearch {
+			position: relative;
+
+			input {
+				display: inline-block;
+
+				font-size: 22px;
+				font-family: Josefin Sans, sans-serif;
+				font-style: italic;
+				color: #82440b;
+				padding: 8px 8px 8px 46px;
+				border-radius: 20px;
+				outline: none;
+				border: none;
+
+				&::placeholder {
+					color: rgba($color: #82440b, $alpha: 0.5);
+					font-size: 22px;
+				}
+			}
+			img {
+				position: absolute;
+				top: 10px;
+				left: 14px;
+			}
+		}
+	}
+}

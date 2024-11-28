@@ -1,0 +1,39 @@
+@import 'reset.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+	text-decoration: none;
+	color: #ffff;
+}
+
+body {
+	font-family: 'Josefin Sans', sans-serif;
+	background-color: #faf0e6;
+	color: #000000;
+}
+
+.wrapper {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+div {
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1230px;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+.main {
+	flex: 1 1 auto;
+}
