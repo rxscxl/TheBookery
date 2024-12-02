@@ -54,7 +54,12 @@ const BookPage = () => {
 							{book.publishedDate || 'Невідомо'}
 						</p>
 						<p>
-							<strong>Опис:</strong> {book.description || 'Опис відсутній'}
+							<strong>Опис:</strong>{' '}
+							<span
+								dangerouslySetInnerHTML={{
+									__html: book.description || 'Опис відсутній',
+								}}
+							/>
 						</p>
 						<a href={book.infoLink} target='_blank' rel='noopener noreferrer'>
 							Детальніше на Google Books

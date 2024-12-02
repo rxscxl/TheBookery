@@ -24,7 +24,6 @@ const BookList = ({ genreFilter }) => {
 					{
 						params: {
 							q: query,
-							langRestrict: 'uk',
 							startIndex: (currentPage - 1) * booksPerPage,
 							maxResults: booksPerPage,
 							orderBy: 'relevance',

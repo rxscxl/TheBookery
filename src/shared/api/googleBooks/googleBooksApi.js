@@ -1,11 +1,11 @@
 import { GOOGLE_BOOKS_API_BASE_URL, GOOGLE_BOOKS_API_KEY } from './config';
 
 /**
- * Поиск книг через Google Books API
- * @param {string} query - Текст для поиска (например, "Шевченко")
- * @param {string} langRestrict - Ограничение по языку (например, "uk" для украинского)
- * @returns {Promise<Array>} Список книг
+ * @param {string} query
+ * @param {string} langRestrict
+ * @returns {Promise<Array>}
  */
+
 export function searchBooks(query, langRestrict = 'uk') {
 	const url = new URL(`${GOOGLE_BOOKS_API_BASE_URL}volumes`);
 	url.searchParams.append('q', query);

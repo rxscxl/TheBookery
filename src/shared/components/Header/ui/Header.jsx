@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useSearch } from '../../../../shared/context/SearchContext.jsx';
 import styles from './Header.module.scss';
 
@@ -9,14 +8,14 @@ const Header = () => {
 		<header>
 			<div className='container'>
 				<div className={styles.headerWrapper}>
-					<Link to='/' className={styles.headerLogo}>
+					<a className={styles.headerLogo} href='/'>
 						<img
 							src='/src/assets/Logo.png'
 							alt='Logo'
 							className={styles.Logo}
 						/>
 						<span>TheBookery</span>
-					</Link>
+					</a>
 
 					<div className={styles.headerSearch}>
 						<input

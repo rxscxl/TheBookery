@@ -1,36 +1,55 @@
-import React from 'react';
 import styles from './CategoryList.module.scss';
 
-const categories = [
-	{
-		name: 'Художня література',
-		genres: [
-			{ name: 'Трилери', query: 'thriller' },
-			{ name: 'Класика', query: 'classic' },
-			{ name: 'Фантастика', query: 'fantasy' },
-		],
-	},
-	{
-		name: 'Прикладна література',
-		genres: [
-			{ name: 'Психологія', query: 'psychology' },
-			{ name: 'Історія', query: 'history' },
-		],
-	},
-	{
-		name: 'Популярна література',
-		genres: [{ name: 'Саморозвиток', query: 'self-help' }],
-	},
-];
-
 const CategoryList = ({ activeGenre, setActiveGenre }) => {
+	const genreTranslations = {
+		fiction: 'Фікшн',
+		history: 'Історія',
+		psychology: 'Психологія',
+		science: 'Наука',
+		'self-help': 'Саморозвиток',
+		thriller: 'Трилери',
+		classics: 'Класика',
+		fantasy: 'Фантастика',
+		romance: 'Роман',
+		nonfiction: 'Нон-фікшн',
+		classic: 'Класика',
+		mystery: 'Мистецтво',
+		philosophy: 'Філософія',
+		literature: 'Література',
+	};
+
+	const categoryMapping = {
+		fiction: 'Художня література',
+		fantasy: 'Художня література',
+		thriller: 'Художня література',
+		classics: 'Художня література',
+		romance: 'Художня література',
+		history: 'Наукова література',
+		science: 'Наукова література',
+		philosophy: 'Наукова література',
+		psychology: 'Наукова література',
+		nonfiction: 'Прикладна література',
+		mystery: 'Мистецтво',
+		'self-help': 'Інше',
+	};
+
+	const categories = Object.entries(categoryMapping).reduce(
+		(acc, [genre, category]) => {
+			const genreName = genreTranslations[genre] || genre;
+			if (!acc[category]) acc[category] = [];
+			acc[category].push({ name: genreName, query: genre });
+			return acc;
+		},
+		{}
+	);
+
 	return (
 		<div className={styles.categoryList}>
-			{categories.map(category => (
-				<div key={category.name}>
-					<h3>{category.name}</h3>
+			{Object.entries(categories).map(([categoryName, genres]) => (
+				<div key={categoryName}>
+					<h3>{categoryName}</h3>
 					<ul>
-						{category.genres.map(genre => (
+						{genres.map(genre => (
 							<li key={genre.query}>
 								<button
 									className={`${styles.genreButton} ${
