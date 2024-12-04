@@ -17,6 +17,7 @@ const BookList = ({ genreFilter }) => {
 	useEffect(() => {
 		setCurrentPage(1);
 	}, [genreFilter, searchQuery]);
+	const totalPages = Math.ceil(totalItems / booksPerPage - 1);
 
 	useEffect(() => {
 		const fetchBooks = async () => {
@@ -54,8 +55,6 @@ const BookList = ({ genreFilter }) => {
 
 		fetchBooks();
 	}, [genreFilter, searchQuery, currentPage, prevQuery]);
-
-	const totalPages = Math.ceil(totalItems / booksPerPage - 1);
 
 	const hasPrevPage = currentPage > 1;
 	const hasNextPage = currentPage < totalPages;
