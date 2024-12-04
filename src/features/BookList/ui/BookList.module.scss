@@ -1,9 +1,3 @@
-.bookList {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 20px;
-}
-
 .pagination {
 	display: flex;
 	justify-content: center;
@@ -41,4 +35,19 @@
 	border: none;
 	cursor: default;
 	font-size: 24px;
+}
+
+.bookList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+	flex: 0 1 auto;
+}
+
+.paginationWrapper {
+	width: 100%;
+	margin-top: 20px;
+	justify-content: center;
+	display: flex;
+	gap: 6px;
 }

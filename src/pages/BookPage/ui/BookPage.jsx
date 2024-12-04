@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { Footer } from '../../../shared/components/Footer';
 import { Header } from '../../../shared/components/Header';
 import styles from './BookPage.module.scss';

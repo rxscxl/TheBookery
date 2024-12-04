@@ -58,21 +58,17 @@ const Main = () => {
 		const category = getCategoryByGenre(activeGenre);
 		return (
 			<div className={styles.breadcrumbs}>
-				<Link to='/' className={styles.breadcrumb} onClick={handleResetGenre}>
-					{`Головна` + ' '}
-				</Link>
-				<span className={styles.breadcrumbSeparator}>{'>' + ' '}</span>
+				<Link
+					to='/'
+					className={styles.breadcrumb}
+					onClick={handleResetGenre}
+				></Link>
+
 				{activeGenre ? (
 					<>
 						{category && (
 							<>
-								<Link
-									to='/'
-									className={styles.breadcrumb}
-									onClick={handleResetGenre}
-								>
-									{category + ' '}
-								</Link>
+								<span className={styles.breadcrumb}>{category + ' '}</span>
 								<span className={styles.breadcrumbSeparator}>{'>' + ' '}</span>
 							</>
 						)}
