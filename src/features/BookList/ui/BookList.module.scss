@@ -1,3 +1,7 @@
+.bookListWrapper {
+	display: flex;
+	flex-direction: column;
+}
 .pagination {
 	display: flex;
 	justify-content: center;
@@ -41,7 +45,7 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 20px;
-	flex: 0 1 auto;
+	flex: 1 1 auto;
 }
 
 .paginationWrapper {

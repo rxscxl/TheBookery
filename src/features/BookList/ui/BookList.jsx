@@ -16,7 +16,7 @@ const BookList = ({ genreFilter }) => {
 
 	useEffect(() => {
 		setCurrentPage(1);
-	}, [genreFilter]);
+	}, [genreFilter, searchQuery]);
 
 	useEffect(() => {
 		const fetchBooks = async () => {
@@ -119,7 +119,7 @@ const BookList = ({ genreFilter }) => {
 	if (error) return <p>Помилка: {error}</p>;
 
 	return (
-		<div>
+		<div className={styles.bookListWrapper}>
 			<div className={styles.bookList}>
 				{books.length > 0 ? (
 					books.map(book => (
@@ -129,7 +129,9 @@ const BookList = ({ genreFilter }) => {
 					<p>Нічого не знайдено</p>
 				)}
 			</div>
-			<ul className={styles.paginationWrapper}>{renderPagination()}</ul>
+			{totalPages > 1 && (
+				<ul className={styles.paginationWrapper}>{renderPagination()}</ul>
+			)}
 		</div>
 	);
 };

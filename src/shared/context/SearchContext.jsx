@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useRef, useState } from 'react';
 
 const SearchContext = createContext();
 
@@ -8,6 +8,7 @@ export const SearchProvider = ({ children }) => {
 	const [searchResults, setSearchResults] = useState([]);
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState(null);
+	const debounceTimeout = useRef(null);
 
 	const fetchSearchResults = async query => {
 		if (!query) {
@@ -29,7 +30,14 @@ export const SearchProvider = ({ children }) => {
 
 	const handleSearchQueryChange = query => {
 		setSearchQuery(query);
-		fetchSearchResults(query);
+
+		if (debounceTimeout.current) {
+			clearTimeout(debounceTimeout.current);
+		}
+
+		debounceTimeout.current = setTimeout(() => {
+			fetchSearchResults(query);
+		}, 300);
 	};
 
 	return (
